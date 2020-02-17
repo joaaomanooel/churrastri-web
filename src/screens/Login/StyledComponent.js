@@ -24,7 +24,7 @@ export const Title = styled.h1`
 `;
 
 export const FormContainer = styled.div`
-  width: ${layout.screenWidth * 0.5}px;
+  width: ${layout.screenWidth * 0.3}px;
   flex-direction: column;
   align-self: center;
   display: flex;
@@ -43,12 +43,12 @@ export const Button = styled.button`
   border-radius: ${layout.scale() * 15}px;
   background-color: ${colors.black(0.9)};
   margin-top: ${layout.scale() * 30}px;
-  width: ${layout.screenWidth * 0.3}px;
   font-size: ${layout.scale() * 16}px;
   padding: ${layout.scale() * 10}px;
   color: ${colors.white()};
   align-self: center;
   cursor: pointer;
+  width: 100%;
   border: 0;
   :active {
     background-color: ${colors.black(0.78)};

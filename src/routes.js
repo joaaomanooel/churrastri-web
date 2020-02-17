@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-import Login from './screens/Login';
 import Main from './screens/Main';
+import Login from './screens/Login';
 
 export default () => (
   <BrowserRouter>

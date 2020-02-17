@@ -6,7 +6,7 @@ import { store } from '../App';
 
 
 const request = (options) => {
-  const API_URL = ' https://churrastri.herokuapp.com/api/v1';
+  const API_URL = 'http://localhost:5000/api/v1';
   const { user: { data: { accessToken } } } = store.getState();
   const headers = { Authorization: `Bearer ${accessToken}` };
   const client = axios.create({ baseURL: API_URL, timeout: 20000, headers });

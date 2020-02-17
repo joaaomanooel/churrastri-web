@@ -11,7 +11,7 @@ export default ({ history, login, loading, user }) => {
   const handleLogin = () => login({ email, password });
 
   useEffect(() => {
-    user._id && history.push('/main');
+    user._id && history.push('/');
   }, [user]);
 
   return (
@@ -21,9 +21,17 @@ export default ({ history, login, loading, user }) => {
       </TitleContainer>
       <FormContainer>
         {t('email')}
-        <Input placeholder={t('email')} type="email" onChange={setEmail} />
+        <Input
+          onChange={({ target }) => setEmail(target.value)}
+          placeholder={t('email')}
+          type="email"
+        />
         {t('password')}
-        <Input placeholder={t('password')} type="password" onChange={setPassword} />
+        <Input
+          onChange={({ target }) => setPassword(target.value)}
+          placeholder={t('password')}
+          type="password"
+        />
 
         <Button disabled={loading} onClick={handleLogin}>
           {t('enter')}
