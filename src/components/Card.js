@@ -1,10 +1,9 @@
 import React from 'react';
-import { View } from 'react-native';
+import styled from 'styled-components';
+import { colors, layout } from '../constants';
 
-// import { Container } from './styles';
+export const Container = styled.div`
 
-export default function components() {
-  return (
-    <View />
-  );
-}
+`;
+
+export default React.memo(() => <Container />);

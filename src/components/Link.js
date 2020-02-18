@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { colors, layout } from '../constants';
 
-export const Container = styled.div`
-
+export const SignUpLink = styled.a`
+  font-weight: bold;
+  cursor: pointer;
 `;
 
-export default React.memo(() => <Container />);
+export default React.memo(props => <SignUpLink {...props}>{props.text}</SignUpLink>);
