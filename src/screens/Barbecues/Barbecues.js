@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Container, Card, CardContainer } from './StyledComponent';
+import { Header } from '../../components';
 import { t } from '../../i18n';
-import { Button, Link, Header } from '../../components';
-import {Container, Card, CardContainer} from './StyledComponent';
 
 export default ({ history, barbecues: bbq }) => {
   const [showButton, setShowButton] = useState(true);
@@ -22,4 +22,4 @@ export default ({ history, barbecues: bbq }) => {
       </CardContainer>
     </Container>
   );
-}
+};

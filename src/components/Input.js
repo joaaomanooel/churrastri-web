@@ -16,7 +16,7 @@ export const Input = styled.input`
   align-self: center;
   width: 100%;
   border: 0;
-`
+`;
 
 export default React.memo(({ onChange = () => { }, label, ...props }) => {
   const handleValue = ({ target }) => onChange(target.value);
@@ -26,4 +26,4 @@ export default React.memo(({ onChange = () => { }, label, ...props }) => {
       <Input {...props} onChange={handleValue} />
     </Container>
   );
-})
+});

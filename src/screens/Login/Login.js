@@ -31,7 +31,11 @@ export default ({ history, login, loading, user }) => {
           type="password"
         />
         <Button disabled={loading} onClick={handleLogin} text={t('enter')} />
-        <SignUpText>{t('isMemberQuestion')} <Link text={t('signUpNow')} /></SignUpText>
+        <SignUpText>
+          {t('isMemberQuestion')}
+          {' '}
+          <Link text={t('signUpNow')} />
+        </SignUpText>
       </FormContainer>
     </Container>
   );

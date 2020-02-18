@@ -5,5 +5,5 @@ export default ({
   password: 'Senha',
   email: 'E-mail',
   isMemberQuestion: 'Ainda não é membro?',
-  signUpNow: 'Entre agora.'
+  signUpNow: 'Entre agora.',
 });

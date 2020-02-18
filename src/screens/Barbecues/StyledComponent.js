@@ -31,4 +31,4 @@ export const Card = styled.div`
 export const SignUpText = styled.label`
   font-size: ${layout.scale() * 12}px;
   align-self: center;
-`
+`;
