@@ -17,9 +17,9 @@ export default ({ history, barbecues: bbq }) => {
       <Header />
       <CardContainer>
         {!!barbecues.length && barbecues.map(barbecue => (
-          <Card onClick={() => history.push(`/detail/${barbecue._id}`)} data={barbecue} />
+          <Card onClick={() => history.push(`/barbecues/${barbecue._id}`)} data={barbecue} />
         ))}
-        <CardBtn onClick={() => history.push('/detail')}>
+        <CardBtn onClick={() => history.push('/barbecues/forms')}>
           <IconContainer>
             <GiBarbecue size={50} color={colors.black(0.4)} />
           </IconContainer>

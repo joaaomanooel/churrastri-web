@@ -28,6 +28,7 @@ const TopContainer = styled.div`
   flex-direction: column;
   display: flex;
 `;
+
 const CardDate = styled.h2`
   line-height: ${layout.scale() * 36}px;
   font-size: ${layout.scale() * 28}px;

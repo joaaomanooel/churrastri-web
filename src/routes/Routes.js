@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Main from '../screens/Main';
 import Login from '../screens/Login';
 import Barbecues from '../screens/Barbecues';
+import BarbecueDetail from '../screens/BarbecueDetail';
+
 
 export default ({ user }) => {
   const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -21,7 +23,8 @@ export default ({ user }) => {
       <Switch>
         <PrivateRoute path="/" exact component={Main} />
         <Route path="/login" component={Login} />
-        <PrivateRoute path="/barbecues" component={Barbecues} />
+        <PrivateRoute path="/barbecues" exact component={Barbecues} />
+        <PrivateRoute path="/barbecues/:id" exact component={BarbecueDetail} />
         <Route path="*" component={Main} />
       </Switch>
     </BrowserRouter>
