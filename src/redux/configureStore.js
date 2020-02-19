@@ -20,11 +20,14 @@ export default (reducers, rootSaga) => {
   enhancers.push(applyMiddleware(...middleware));
 
   // Compose
-  const devtoolsConfig = { hostname: 'localhost', port: 8000 };
-  // const composeEnhancers = __DEV__ ? composeWithDevTools(devtoolsConfig) : compose;
+  const dtConfig = { hostname: 'localhost', port: 8000 };
+  const { NODE_ENV } = process.env;
+
+  const composeEnhancers = NODE_ENV !== 'production' ? composeWithDevTools(dtConfig) : compose;
+
   // Store
   const rootReducer = persistReducer(rootPersistConfig, reducers);
-  const store = createStore(rootReducer, compose(...enhancers));
+  const store = createStore(rootReducer, composeEnhancers(...enhancers));
   const persistor = persistStore(store);
 
   // Kick off root saga
