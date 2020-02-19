@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Card, CardContainer } from './StyledComponent';
-import { Header } from '../../components';
+import { Container, CardContainer, CardBtn } from './StyledComponent';
+import { Card, Header } from '../../components';
 import { t } from '../../i18n';
 
 export default ({ history, barbecues: bbq }) => {
-  const [showButton, setShowButton] = useState(true);
   const [barbecues, setBarbecues] = useState(bbq || []);
 
   useEffect(() => {
@@ -15,10 +14,8 @@ export default ({ history, barbecues: bbq }) => {
     <Container>
       <Header />
       <CardContainer>
-        {!!barbecues.length && barbecues.map(barbecue => (
-          <Card />
-        ))}
-        <Card />
+        {!!barbecues.length && barbecues.map(barbecue => <Card data={barbecue} />)}
+        <CardBtn />
       </CardContainer>
     </Container>
   );
