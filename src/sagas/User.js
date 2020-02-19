@@ -8,7 +8,6 @@ export function* getAll() {
     const users = yield call(user.getAll);
     yield put(UserActions.findUsersSuccess(users));
   } catch (error) {
-    console.log(error);
     yield put(UserActions.findUsersFailure());
   }
 }
