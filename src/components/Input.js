@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { layout } from '../constants';
 
-export const Container = styled.div`
+const Container = styled.div`
   margin-bottom: ${layout.scale() * 10}px;
   margin-top: ${layout.scale() * 10}px;
   width: 100%;
 `;
 
-export const Input = styled.input`
+const Input = styled.input`
   border-radius: ${layout.scale() * 2}px;
   font-size: ${layout.scale() * 16}px;
   padding: ${layout.scale() * 10}px;

@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { colors, layout } from '../constants';
 
-export const Button = styled.button`
+const Button = styled.button`
   border-radius: ${layout.scale() * 15}px;
-  background-color: ${({ disabled }) => colors.black(disabled ? 0.3 : 0.9)};
+  background-color: ${({ disabled }) => colors.black(disabled ? 0.3 : 0.95)};
   ${({ disabled }) => !disabled && 'cursor: pointer;'}
   margin-bottom: ${layout.scale() * 20}px;
   margin-top: ${layout.scale() * 20}px;

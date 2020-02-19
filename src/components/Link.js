@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const SignUpLink = styled.a`
+const SignUpLink = styled.a`
   font-weight: bold;
   cursor: pointer;
 `;
