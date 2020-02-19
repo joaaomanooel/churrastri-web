@@ -61,21 +61,21 @@ const BottomText = styled.text`
   padding-left: ${layout.scale() * 5}px;
 `;
 
-export default React.memo(({ data = {} }) => {
+export default React.memo(({ data = {}, ...props }) => {
   const date = data.date ? parseISO(data.date) : new Date();
   return (
-    <Card>
+    <Card {...props}>
       <TopContainer>
         <CardDate>{format(date, 'dd/MM')}</CardDate>
         <Title>{data.title}</Title>
       </TopContainer>
       <BottomContainer>
         <BottomItemContainer>
-          <MdSupervisorAccount color={colors.yellow()} size={24} />
+          <MdSupervisorAccount color={colors.yellow()} size={layout.scale() * 24} />
           <BottomText>{data.participants && data.participants.length || 0}</BottomText>
         </BottomItemContainer>
         <BottomItemContainer>
-          <MdMonetizationOn color={colors.yellow()} size={24} />
+          <MdMonetizationOn color={colors.yellow()} size={layout.scale() * 24} />
           <BottomText>{toCurrency(data.price || 0)}</BottomText>
         </BottomItemContainer>
       </BottomContainer>
