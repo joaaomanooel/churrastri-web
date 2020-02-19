@@ -1,22 +1,24 @@
 import { createGlobalStyle } from 'styled-components';
-import { layout } from './constants';
+import { layout, colors } from './constants';
 
 export default createGlobalStyle`
   * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
+    padding: 0;
     outline: 0;
+    margin: 0;
   }
 
   html, body, #root {
+
     height: 100%;
   }
 
   body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: ${layout.scale() * 16}px;
-    color: #333;
     -webkit-font-smoothing: antialiased !important;
+    font-size: ${layout.scale() * 16}px;
+    font-family: 'Raleway', sans-serif;
+    color: ${colors.black()};
+    font-style: normal;
   }
 `;
