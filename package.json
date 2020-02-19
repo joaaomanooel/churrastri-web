@@ -10,6 +10,20 @@
     "react:devtool": "react-devtools",
     "redux:devtool": "remotedev"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaaomanooel/churras-tri-web.git"
+  },
+  "author": {
+    "name": "Joao Manoel Neto",
+    "url": "https://github.com/joaaomanooel",
+    "email": "joaaomanooel@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joaaomanooel/churras-tri-web/issues"
+  },
+  "homepage": "https://churrastri.netlify.com",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",

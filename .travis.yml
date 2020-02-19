@@ -5,7 +5,7 @@ cache:
 
 script:
   - yarn lint
-  - npm run build
+  - yarn build
 
 before_deploy:
   - npm install netlify-cli -g
