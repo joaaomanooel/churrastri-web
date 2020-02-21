@@ -21,6 +21,9 @@
     "react"
   ],
   "rules": {
+    "react-hooks/exhaustive-deps": 0,
+    "no-mixed-operators": 0,
+    "no-alert": 0,
     "object-curly-newline": [
       "error",
       {

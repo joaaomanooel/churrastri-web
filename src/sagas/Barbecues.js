@@ -9,7 +9,6 @@ export function* getAll() {
     const allBarbecues = yield call(barbecues.getAll);
     yield put(BarbecuesActions.getBarbecuesSuccess(allBarbecues));
   } catch (error) {
-    console.log(error);
     yield put(BarbecuesActions.getBarbecuesFailure());
   }
 }
