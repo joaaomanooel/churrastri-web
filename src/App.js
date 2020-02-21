@@ -4,7 +4,6 @@ import { PersistGate } from 'redux-persist/lib/integration/react';
 import createStore from './redux';
 import Routes from './routes';
 import GlobalStyle from './GlobalStyle';
-import './config/reactotronConfig';
 
 const { store, persistor } = createStore();
 
