@@ -13,6 +13,7 @@ const ItemContainer = styled.div`
   border-bottom: 1px solid ${colors.yellow(0.6)};
   padding: ${layout.scale() * 10}px;
   justify-content: space-between;
+  align-items: center;
   flex-direction: row;
   display: flex;
   width: 100%;
@@ -21,10 +22,10 @@ const ItemContainer = styled.div`
 const Radio = styled.div`
   background-color: ${({ paid }) => paid && colors.yellow(0.6)};
   border: 2px solid ${colors.yellow()};
-  border-radius: 30px;
-  height: 20px;
-  margin: 10px;
-  width: 20px;
+  border-radius: ${layout.scale() * 30}px;
+  height: ${layout.scale() * 20}px;
+  margin: ${layout.scale() * 10}px;
+  width: ${layout.scale() * 20}px;
 `;
 
 const NameContainer = styled.div`
@@ -38,24 +39,7 @@ const Text = styled.strong`
   text-decoration: ${({ paid }) => paid && 'line-through'};
 `;
 
-export default React.memo(({ data: barbecue }) => {
-  const sortByName = e => e.sort((a, b) => {
-    if (a.name > b.name) return 1;
-    if (a.name < b.name) return -1;
-    if (a.createdAt > b.createdAt) return 1;
-    if (a.createdAt < b.createdAt) return -1;
-    if (a._id > b._id) return 1;
-    if (a._id < b._id) return -1;
-    return 0;
-  });
-
-  const [participants, setParticipants] = useState(sortByName(barbecue.participants || []));
-
-  const handlePaid = (participant) => {
-    const users = participants.filter(i => i._id !== participant._id);
-    setParticipants(sortByName([...users, { ...participant, paid: !participant.paid }]));
-  };
-
+export default React.memo(({ data: barbecue, participants, handlePaid }) => {
   return (
     <ListView>
       {!!participants.length && participants.map(participant => (

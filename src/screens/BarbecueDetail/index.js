@@ -11,6 +11,7 @@ const mapStateToProps = (state, { match }) => {
 
 const mapDispatchToProps = dispatch => ({
   removeBarbecues: data => dispatch(BarbecuesActions.removeBarbecuesRequest(data)),
+  updateBarbecues: data => dispatch(BarbecuesActions.updateBarbecuesRequest(data)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BarbecueDetail);

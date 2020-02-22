@@ -25,6 +25,7 @@ export default ({ user }) => {
         <Route path="/login" component={Login} />
         <PrivateRoute path="/barbecues" exact component={Barbecues} />
         <PrivateRoute path="/barbecues/forms" exact component={BarbecueForm} />
+        <PrivateRoute path="/barbecues/forms/:id" exact component={BarbecueForm} />
         <PrivateRoute path="/barbecues/:id" exact component={BarbecueDetail} />
         <Route path="*" component={Main} />
       </Switch>

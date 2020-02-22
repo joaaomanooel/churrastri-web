@@ -11,6 +11,7 @@ const Container = styled.div`
 const Input = styled.input`
   border-radius: ${layout.scale() * 2}px;
   font-size: ${layout.scale() * 16}px;
+  height: ${layout.scale() * 40}px;
   padding: ${layout.scale() * 10}px;
   margin: ${layout.scale() * 5}px;
   align-self: center;
