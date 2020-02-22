@@ -16,8 +16,8 @@ export default createGlobalStyle`
 
   body {
     -webkit-font-smoothing: antialiased !important;
+    font-family: 'Raleway', sans-serif !important;
     font-size: ${layout.scale() * 16}px;
-    font-family: 'Raleway', sans-serif;
     color: ${colors.black()};
     font-style: normal;
   }

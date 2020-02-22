@@ -95,3 +95,8 @@ export const ItemContainer = styled.div`
   display: flex;
   width: 100%;
 `;
+
+export const ButtonContainer = styled.div`
+  width: ${layout.scale() * 300}px;
+  align-self: center;
+`;

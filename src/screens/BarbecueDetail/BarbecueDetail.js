@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions,jsx-a11y/click-events-have-key-events */
-import React from 'react';
+import React, { useState } from 'react';
 import { MdSupervisorAccount, MdMonetizationOn, MdEdit, MdDelete } from 'react-icons/md';
 import { format, parseISO } from 'date-fns';
 import {
@@ -15,18 +15,40 @@ import {
   BottomItemContainer,
   IconButton,
 } from './StyledComponent';
-import { toCurrency } from '../../i18n';
+import { toCurrency, t } from '../../i18n';
 import colors from '../../constants/colors';
 import layout from '../../constants/layout';
-import { Header, ListPaid } from '../../components';
+import { Header, ListPaid, Button } from '../../components';
+import { ButtonContainer } from '../BarbecueForms/StyledComponent';
 
-
-export default ({ barbecue = {}, user, removeBarbecues = () => { }, history }) => {
+export default ({ barbecue = {}, user, removeBarbecues = () => { }, history, updateBarbecues }) => {
   const date = barbecue.date ? parseISO(barbecue.date) : new Date();
+
+  const sortByName = e => e.sort((a, b) => {
+    if (a.name > b.name) return 1;
+    if (a.name < b.name) return -1;
+    if (a.createdAt > b.createdAt) return 1;
+    if (a.createdAt < b.createdAt) return -1;
+    if (a._id > b._id) return 1;
+    if (a._id < b._id) return -1;
+    return 0;
+  });
+
+  const [participants, setParticipants] = useState(sortByName(barbecue.participants || []));
+
+  const handlePaid = (participant) => {
+    const users = participants.filter(i => i._id !== participant._id);
+    setParticipants(sortByName([...users, { ...participant, paid: !participant.paid }]));
+  };
 
   const remove = async () => {
     await removeBarbecues(barbecue._id);
     history.push('/');
+  };
+
+  const handleSave = () => {
+    updateBarbecues({ ...barbecue, paid: participants.map((p) => { if (p.paid) return p._id; }) });
+    history.push('/barbecues');
   };
 
   return (
@@ -39,7 +61,7 @@ export default ({ barbecue = {}, user, removeBarbecues = () => { }, history }) =
               <MdDelete size={20} />
             </IconButton>
             <IconButton
-              onClick={() => history.push(`/barbecue/forms/${barbecue._id}`)}
+              onClick={() => history.push(`/barbecues/forms/${barbecue._id}`)}
               style={{ padding: 10 }}
             >
               <MdEdit size={20} />
@@ -62,7 +84,10 @@ export default ({ barbecue = {}, user, removeBarbecues = () => { }, history }) =
             </BottomItemContainer>
           </BottomContainer>
         </TopContainer>
-        <ListPaid data={barbecue} />
+        <ListPaid data={barbecue} handlePaid={handlePaid} participants={participants} />
+        <ButtonContainer>
+          <Button text={t('save')} onClick={handleSave} />
+        </ButtonContainer>
       </DetailContainer>
     </Container>
   );

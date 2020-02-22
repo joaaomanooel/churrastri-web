@@ -28,4 +28,5 @@ export default ({
   isCurrentlyUnavailable: 'Está indisponivel no momento',
   barbecueCalendar: 'Agenda de Churras',
   isRequired: 'é obrigatório',
+  select: 'Selecione',
 });

@@ -9,4 +9,5 @@ export default ({
   title: 'Título',
   price: 'Preço',
   paid: 'Pago',
+  noUserAvailable: 'Nenhum usuário disponível.',
 });
