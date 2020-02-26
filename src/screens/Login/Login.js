@@ -37,7 +37,7 @@ export default ({ history, login, loading, user }) => {
           type="password"
           required
         />
-        <Button disabled={loading} onClick={handleLogin} text={t('enter')} />
+        <Button type="button" disabled={loading} onClick={handleLogin} text={t('enter')} />
         <SignUpText>
           {t('isMemberQuestion')}
           {' '}
