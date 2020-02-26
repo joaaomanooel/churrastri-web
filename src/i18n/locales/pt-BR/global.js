@@ -29,4 +29,5 @@ export default ({
   barbecueCalendar: 'Agenda de Churras',
   isRequired: 'é obrigatório',
   select: 'Selecione',
+  incorrect: 'Incorreto',
 });

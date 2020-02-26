@@ -34,7 +34,7 @@ export const IconContainer = styled.div`
 export const IconButton = styled.div`
   cursor: pointer;
   :active {
-    opacity: 0.7;
+    opacity: 0.75;
   }
 `;
 

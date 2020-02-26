@@ -18,6 +18,7 @@ export default function* root() {
 
     // USER
     takeLatest(UserActions.findUsersRequest().type, UserSagas.getAll),
+    takeLatest(UserActions.addUserRequest().type, UserSagas.insert),
 
     // BARBECUES
     takeLatest(BarbecuesActions.getBarbecuesRequest().type, BarbecuesSagas.getAll),

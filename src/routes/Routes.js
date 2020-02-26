@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 import Main from '../screens/Main';
 import Login from '../screens/Login';
+import Signup from '../screens/Signup';
 import Barbecues from '../screens/Barbecues';
 import BarbecueForm from '../screens/BarbecueForms';
 import BarbecueDetail from '../screens/BarbecueDetail';
@@ -23,6 +24,7 @@ export default ({ user }) => {
       <Switch>
         <PrivateRoute path="/" exact component={Main} />
         <Route path="/login" component={Login} />
+        <Route path="/signup" component={Signup} />
         <PrivateRoute path="/barbecues" exact component={Barbecues} />
         <PrivateRoute path="/barbecues/forms" exact component={BarbecueForm} />
         <PrivateRoute path="/barbecues/forms/:id" exact component={BarbecueForm} />

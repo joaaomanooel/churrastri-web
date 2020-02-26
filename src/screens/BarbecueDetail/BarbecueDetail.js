@@ -37,8 +37,10 @@ export default ({ barbecue = {}, user, removeBarbecues = () => { }, history, upd
   const [participants, setParticipants] = useState(sortByName(barbecue.participants || []));
 
   const handlePaid = (participant) => {
-    const users = participants.filter(i => i._id !== participant._id);
-    setParticipants(sortByName([...users, { ...participant, paid: !participant.paid }]));
+    if (barbecue.owner === user._id) {
+      const users = participants.filter(i => i._id !== participant._id);
+      setParticipants(sortByName([...users, { ...participant, paid: !participant.paid }]));
+    }
   };
 
   const remove = async () => {
@@ -47,6 +49,7 @@ export default ({ barbecue = {}, user, removeBarbecues = () => { }, history, upd
   };
 
   const handleSave = () => {
+    // eslint-disable-next-line array-callback-return, consistent-return
     updateBarbecues({ ...barbecue, paid: participants.map((p) => { if (p.paid) return p._id; }) });
     history.push('/barbecues');
   };
@@ -86,7 +89,7 @@ export default ({ barbecue = {}, user, removeBarbecues = () => { }, history, upd
         </TopContainer>
         <ListPaid data={barbecue} handlePaid={handlePaid} participants={participants} />
         <ButtonContainer>
-          <Button text={t('save')} onClick={handleSave} />
+          {barbecue.owner === user._id && (<Button text={t('save')} onClick={handleSave} />)}
         </ButtonContainer>
       </DetailContainer>
     </Container>

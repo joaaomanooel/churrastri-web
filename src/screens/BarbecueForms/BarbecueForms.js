@@ -13,7 +13,7 @@ import {
 } from './StyledComponent';
 import { colors, layout } from '../../constants';
 
-export default ({ updateBarbecues, addBarbecues, history, users: usr, barbecue = {} }) => {
+export default ({ updateBarbecues, addBarbecues, history, users: usr, barbecue = {}, user }) => {
   const barbecuePrice = toCurrency(parseFloat(barbecue.price || 0));
   const barbecueDate = barbecue.date ? parseISO(barbecue.date) : new Date();
   const [title, setTitle] = useState(barbecue.title);
@@ -30,6 +30,10 @@ export default ({ updateBarbecues, addBarbecues, history, users: usr, barbecue =
     }));
     setUsers(userParticipant);
   };
+
+  useEffect(() => {
+    if (usr) setUsers(usr);
+  }, [usr]);
 
   useEffect(() => {
     setParticipants(participants.map(p => ({ ...p, selected: true })));
@@ -105,17 +109,19 @@ export default ({ updateBarbecues, addBarbecues, history, users: usr, barbecue =
       <Header />
       <DetailContainer>
         <Input
-          autoFocus
           placeholder={t('title')}
+          onChange={setTitle}
           label={t('title')}
           value={title}
-          onChange={setTitle}
+          autoFocus
+          required
         />
         <Input
           placeholder={t('description')}
           onChange={setDescription}
           label={t('description')}
           value={description}
+          size={140}
         />
         <InputsInLineView>
           <Input
@@ -133,14 +139,14 @@ export default ({ updateBarbecues, addBarbecues, history, users: usr, barbecue =
           />
         </InputsInLineView>
         <Multiselect
-          style={MultiselectStyle}
+          options={users.filter(u => u._id !== user._id)}
           emptyRecordMsg={t('noUserAvailable')}
           placeholder={`${t('select')}...`}
           onSelect={onSelectParticipants}
           onRemove={onRemoveParticipants}
           selectedValues={participants}
-          displayValue="email"
-          options={users}
+          style={MultiselectStyle}
+          displayValue="username"
         />
         <ButtonContainer>
           <Button text={t('save')} onClick={handleSave} />

@@ -9,7 +9,7 @@ export const Container = styled.div`
   flex: 1;
 `;
 
-export const FormContainer = styled.form`
+export const FormContainer = styled.div`
   margin-top: ${layout.scale() * -20}px;
   width: ${layout.screenWidth * 0.3}px;
   justify-content: center;
@@ -17,9 +17,4 @@ export const FormContainer = styled.form`
   align-items: center;
   align-self: center;
   display: flex;
-`;
-
-export const SignUpText = styled.label`
-  font-size: ${layout.scale() * 12}px;
-  align-self: center;
 `;

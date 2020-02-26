@@ -8,7 +8,12 @@ export default ({ history, login, loading, user }) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
-  const handleLogin = () => login({ email, password });
+  const handleLogin = () => {
+    const formError = e => alert(`${e} ${t('isRequired')}`);
+    if (!email) return formError(t('email'));
+    if (!password) return formError(t('password'));
+    return login({ email, password });
+  };
 
   useEffect(() => { user._id && history.push('/'); }, [user]);
 
@@ -17,7 +22,8 @@ export default ({ history, login, loading, user }) => {
       <Header />
       <FormContainer>
         <Input
-          type="email"
+          required
+          autoFocus
           value={email}
           label={t('email')}
           onChange={setEmail}
@@ -29,12 +35,13 @@ export default ({ history, login, loading, user }) => {
           label={t('password')}
           value={password}
           type="password"
+          required
         />
         <Button disabled={loading} onClick={handleLogin} text={t('enter')} />
         <SignUpText>
           {t('isMemberQuestion')}
           {' '}
-          <Link text={t('signUpNow')} />
+          <Link onClick={() => history.push('/signup')} text={t('signUpNow')} />
         </SignUpText>
       </FormContainer>
     </Container>

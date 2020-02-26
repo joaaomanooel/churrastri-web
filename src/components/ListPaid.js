@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React, { useState } from 'react';
+import React from 'react';
 import { colors, layout } from '../constants';
 import { toCurrency } from '../i18n';
 
@@ -46,7 +46,7 @@ export default React.memo(({ data: barbecue, participants, handlePaid }) => {
         <ItemContainer onClick={() => handlePaid(participant)}>
           <NameContainer>
             <Radio paid={participant.paid} />
-            <Text>{participant.name}</Text>
+            <Text>{participant.username}</Text>
           </NameContainer>
           <Text paid={participant.paid}>
             {toCurrency((barbecue.price || 0) / participants.length)}

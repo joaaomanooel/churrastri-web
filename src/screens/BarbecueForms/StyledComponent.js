@@ -9,7 +9,7 @@ export const Container = styled.div`
   flex: 1;
 `;
 
-export const DetailContainer = styled.div`
+export const DetailContainer = styled.form`
   -webkit-box-shadow: 0px 2px 10px 0px ${colors.black(0.15)};
   -moz-box-shadow: 0px 2px 10px 0px ${colors.black(0.15)};
   box-shadow: 0px 2px 10px 0px ${colors.black(0.15)};
