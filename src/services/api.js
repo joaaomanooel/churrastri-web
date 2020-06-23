@@ -4,7 +4,6 @@ import * as authActions from '../redux/Auth';
 import * as UserActions from '../redux/User';
 import { store } from '../App';
 
-
 const request = (options) => {
   const { API_URL = 'https://churrastri.herokuapp.com/api/v1' } = process.env;
   const { user: { data: { accessToken } } } = store.getState();

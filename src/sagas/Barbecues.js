@@ -3,7 +3,6 @@ import { t } from '../i18n';
 import { barbecues } from '../services';
 import * as BarbecuesActions from '../redux/Barbecues';
 
-
 export function* getAll() {
   try {
     const allBarbecues = yield call(barbecues.getAll);

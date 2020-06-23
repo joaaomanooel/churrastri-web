@@ -3,7 +3,6 @@ import { user } from '../services';
 import * as UserActions from '../redux/User';
 import { t } from '../i18n';
 
-
 export function* getAll() {
   try {
     const users = yield call(user.getAll);
