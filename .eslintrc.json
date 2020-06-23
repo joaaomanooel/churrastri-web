@@ -1,111 +1,111 @@
 {
-    "env": {
-        "browser": true,
-        "es6": true
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "airbnb"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "airbnb"
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "react-hooks/exhaustive-deps": 0,
+    "no-mixed-operators": 0,
+    "no-alert": 0,
+    "object-curly-newline": [
+      "error",
+      {
+        "ObjectPattern": {
+          "multiline": true,
+          "minProperties": 7
+        }
+      }
     ],
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 2018,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react"
+    "arrow-parens": [
+      2,
+      "as-needed",
+      {
+        "requireForBlockBody": true
+      }
     ],
-    "rules": {
-      "react-hooks/exhaustive-deps": 0,
-      "no-mixed-operators": 0,
-      "no-alert": 0,
-      "object-curly-newline": [
-        "error",
-        {
-          "ObjectPattern": {
-            "multiline": true,
-            "minProperties": 7
-          }
-        }
-      ],
-      "arrow-parens": [
-        2,
-        "as-needed",
-        {
-          "requireForBlockBody": true
-        }
-      ],
-      "no-unused-vars": [
-        "error",
-        {
-          "argsIgnorePattern": "^_"
-        }
-      ],
-      "react/jsx-props-no-spreading": 0,
-      "arrow-body-style": 0,
-      "no-mixed-operators": 0,
-      "react/destructuring-assignment": 0,
-      "react/prop-types": 0,
-      "comma-dangle": [
-        "error",
-        "always-multiline"
-      ],
-      "react/prefer-stateless-function": 0,
-      "react/jsx-filename-extension": [
-        1,
-        {
-          "extensions": [
-            ".js",
-            ".jsx"
-          ]
-        }
-      ],
-      "max-len": [
-        "error",
-        {
-          "code": 100
-        }
-      ],
-      "react/no-array-index-key": 0,
-      "jsx-a11y/anchor-is-valid": 0,
-      "global-require": 0,
-      "no-plusplus": 0,
-      "no-underscore-dangle": 0,
-      "no-return-assign": 0,
-      "no-unused-expressions": 0,
-      "no-extra-boolean-cast": 0,
-      "import/prefer-default-export": 0,
-      "import/no-extraneous-dependencies": [
-        "error",
-        {
-          "devDependencies": true
-        }
-      ],
-      "react/forbid-prop-types": 0,
-      "react/no-did-update-set-state": 0,
-      "import/extensions": 0,
-      "import/no-unresolved": [
-        "error",
-        {
-          "ignore": [
-            "@/root",
-            "@/components",
-            "@/constants",
-            "@/screens",
-            "@/fixtures",
-            "@/lib",
-            "@/assets",
-            "@/i18n",
-            "@/redux",
-            "@/sagas",
-            "@/services"
-          ]
-        }
-      ]
-    }
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "react/jsx-props-no-spreading": 0,
+    "arrow-body-style": 0,
+    "no-mixed-operators": 0,
+    "react/destructuring-assignment": 0,
+    "react/prop-types": 0,
+    "comma-dangle": [
+      "error",
+      "always-multiline"
+    ],
+    "react/prefer-stateless-function": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 100
+      }
+    ],
+    "react/no-array-index-key": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "global-require": 0,
+    "no-plusplus": 0,
+    "no-underscore-dangle": 0,
+    "no-return-assign": 0,
+    "no-unused-expressions": 0,
+    "no-extra-boolean-cast": 0,
+    "import/prefer-default-export": 0,
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "react/forbid-prop-types": 0,
+    "react/no-did-update-set-state": 0,
+    "import/extensions": 0,
+    "import/no-unresolved": [
+      "error",
+      {
+        "ignore": [
+          "@/root",
+          "@/components",
+          "@/constants",
+          "@/screens",
+          "@/fixtures",
+          "@/lib",
+          "@/assets",
+          "@/i18n",
+          "@/redux",
+          "@/sagas",
+          "@/services"
+        ]
+      }
+    ]
   }
+}
