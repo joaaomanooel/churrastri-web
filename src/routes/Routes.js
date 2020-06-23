@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import Main from '../screens/Main';
 import Login from '../screens/Login';
@@ -20,17 +20,15 @@ export default ({ user }) => {
   );
 
   return (
-    <BrowserRouter>
-      <Switch>
-        <PrivateRoute path="/" exact component={Main} />
-        <Route path="/login" component={Login} />
-        <Route path="/signup" component={Signup} />
-        <PrivateRoute path="/barbecues" exact component={Barbecues} />
-        <PrivateRoute path="/barbecues/forms" exact component={BarbecueForm} />
-        <PrivateRoute path="/barbecues/forms/:id" exact component={BarbecueForm} />
-        <PrivateRoute path="/barbecues/:id" exact component={BarbecueDetail} />
-        <Route path="*" component={Main} />
-      </Switch>
-    </BrowserRouter>
+    <Switch>
+      <Route path="/" exact><Main /></Route>
+      <Route path="/login"><Login /></Route>
+      <Route path="/signup"><Signup /></Route>
+      <PrivateRoute path="/barbecues" exact><Barbecues /></PrivateRoute>
+      <PrivateRoute path="/barbecues/forms" exact><BarbecueForm /></PrivateRoute>
+      <PrivateRoute path="/barbecues/forms/:id" exact><BarbecueForm /></PrivateRoute>
+      <PrivateRoute path="/barbecues/:id" exact><BarbecueDetail /></PrivateRoute>
+      <Route path="*"><Main /></Route>
+    </Switch>
   );
 };

@@ -10,10 +10,12 @@ const { store, persistor } = createStore();
 export { store };
 
 export default () => (
-  <Provider store={store}>
+  <>
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <Routes />
+      </PersistGate>
+    </Provider>
     <GlobalStyle />
-    <PersistGate persistor={persistor}>
-      <Routes />
-    </PersistGate>
-  </Provider>
+  </>
 );

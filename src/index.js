@@ -1,9 +1,13 @@
 /* eslint-disable import/first */
 require('dotenv').config();
 
+import { BrowserRouter as Router } from 'react-router-dom';
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import App from './App';
 
-
-ReactDOM.render(<App />, document.getElementById('root'));
+render((
+  <Router>
+    <App />
+  </Router>
+), document.getElementById('root'));
