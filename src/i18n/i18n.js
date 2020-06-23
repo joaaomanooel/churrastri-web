@@ -1,6 +1,5 @@
 import I18n from 'i18n-js';
-
-const ptBR = require('./locales/pt-BR');
+import ptBR from './locales/pt-BR';
 
 I18n.locale = 'pt-BR';
 I18n.fallbacks = true;
