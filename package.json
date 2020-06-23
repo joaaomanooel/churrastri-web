@@ -2,11 +2,12 @@
   "name": "churras-tri-web",
   "version": "0.4.1",
   "private": true,
+  "homepage": "./",
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "lint": "eslint ./src",
+    "lint": "eslint .",
     "react:devtool": "react-devtools",
     "redux:devtool": "remotedev"
   },
@@ -23,11 +24,7 @@
   "bugs": {
     "url": "https://github.com/joaaomanooel/churras-tri-web/issues"
   },
-  "homepage": "https://churrastri.netlify.com",
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
     "babel-plugin-macros": "^2.8.0",
     "date-fns": "^2.9.0",
@@ -40,7 +37,7 @@
     "react-icons": "^3.9.0",
     "react-lottie": "^1.2.3",
     "react-redux": "^7.1.3",
-    "react-router-dom": "^5.1.2",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.0",
     "redux": "^4.0.5",
     "redux-actions": "^2.6.5",
@@ -53,6 +50,9 @@
   "devDependencies": {
     "@babel/core": "7.8.4",
     "@svgr/webpack": "4.3.3",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
     "@typescript-eslint/eslint-plugin": "^2.10.0",
     "@typescript-eslint/parser": "^2.10.0",
     "babel-eslint": "10.0.3",
