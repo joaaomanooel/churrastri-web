@@ -4,19 +4,13 @@ import * as BarbecuesActions from '../../redux/Barbecues';
 import { selectors as FetchSelector } from '../../redux/Fetch';
 import BarbecueForms from './BarbecueForms';
 
-const mapStateToProps = (state, { match }) => {
-  const { id } = match.params;
-  const { barbecues = [] } = state.barbecues;
-  const barbecue = barbecues.find(b => b._id === id);
-  return ({
-    loading: FetchSelector.getFetching('ADD_BARBECUES', state),
-    error: FetchSelector.getError('ADD_BARBECUES', state),
-    barbecues: state.barbecues.barbecues,
-    users: state.user.users,
-    user: state.user.data,
-    barbecue,
-  });
-};
+const mapStateToProps = state => ({
+  loading: FetchSelector.getFetching('ADD_BARBECUES', state),
+  error: FetchSelector.getError('ADD_BARBECUES', state),
+  barbecues: state.barbecues.barbecues || [],
+  users: state.user.users,
+  user: state.user.data,
+});
 
 const mapDispatchToProps = dispatch => ({
   getUsers: dispatch(UserActions.findUsersRequest()),

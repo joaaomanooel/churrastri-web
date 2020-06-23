@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Multiselect } from 'multiselect-react-dropdown';
+import { useHistory, useParams } from 'react-router-dom';
 import { parseISO, format } from 'date-fns';
+
 import { Header, Button } from '../../components';
 import { t, toCurrency } from '../../i18n';
 
@@ -13,7 +15,16 @@ import {
 } from './StyledComponent';
 import { colors, layout } from '../../constants';
 
-export default ({ updateBarbecues, addBarbecues, history, users: usr, barbecue = {}, user }) => {
+export default ({ updateBarbecues, addBarbecues, users: usr, user, barbecues = [{}] }) => {
+  const history = useHistory();
+  const { id } = useParams();
+
+  const [barbecue = {}] = useState(barbecues.find(b => b._id === id) || {});
+
+  // useEffect(() => {
+  //   setBarbecue(barbecues.find(b => b._id === id));
+  // }, []);
+
   const barbecuePrice = toCurrency(parseFloat(barbecue.price || 0));
   const barbecueDate = barbecue.date ? parseISO(barbecue.date) : new Date();
   const [title, setTitle] = useState(barbecue.title);

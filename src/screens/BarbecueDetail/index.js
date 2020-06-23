@@ -2,11 +2,9 @@ import { connect } from 'react-redux';
 import BarbecueDetail from './BarbecueDetail';
 import * as BarbecuesActions from '../../redux/Barbecues';
 
-const mapStateToProps = (state, { match }) => {
-  const { id } = match.params;
-  const { barbecues: { barbecues = [] }, user: { data: user } } = state;
-  const barbecue = barbecues.find(b => b._id === id);
-  return { user, barbecue };
+const mapStateToProps = (state) => {
+  const { barbecues: { barbecues }, user: { data: user } } = state;
+  return { user, barbecues };
 };
 
 const mapDispatchToProps = dispatch => ({

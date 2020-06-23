@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { MdSupervisorAccount, MdMonetizationOn, MdEdit, MdDelete } from 'react-icons/md';
 import { format, parseISO } from 'date-fns';
+import { useHistory, useParams } from 'react-router-dom';
 import {
   Title,
   CardDate,
@@ -21,7 +22,12 @@ import layout from '../../constants/layout';
 import { Header, ListPaid, Button } from '../../components';
 import { ButtonContainer } from '../BarbecueForms/StyledComponent';
 
-export default ({ barbecue = {}, user, removeBarbecues = () => { }, history, updateBarbecues }) => {
+export default ({ barbecues = [], user, removeBarbecues = () => { }, updateBarbecues }) => {
+  const history = useHistory();
+  const { id } = useParams();
+
+  const [barbecue = {}] = useState(barbecues.find(b => b._id === id) || {});
+
   const date = barbecue.date ? parseISO(barbecue.date) : new Date();
 
   const sortByName = e => e.sort((a, b) => {
