@@ -1,10 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { t } from '../../i18n';
 import { Button, Link, Header, Input } from '../../components';
 import { Container, FormContainer, SignUpText } from './StyledComponent';
 
-export default ({ history, login, loading, user }) => {
+export default ({ login, loading, user }) => {
+  const history = useHistory();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 

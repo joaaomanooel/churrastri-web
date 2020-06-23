@@ -1,11 +1,13 @@
 import { GiBarbecue } from 'react-icons/gi';
+import { useHistory } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import { Container, CardContainer, CardBtn, IconContainer } from './StyledComponent';
 import { Card, Header } from '../../components';
 import { t } from '../../i18n';
 import colors from '../../constants/colors';
 
-export default ({ history, barbecues: bbq }) => {
+export default ({ barbecues: bbq }) => {
+  const history = useHistory();
   const [barbecues, setBarbecues] = useState(bbq || []);
 
   useEffect(() => {

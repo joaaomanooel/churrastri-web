@@ -6,7 +6,6 @@ import { colors, layout, images } from '../constants';
 import { t } from '../i18n';
 import { resetData } from '../redux/Auth';
 
-
 const TitleContainer = styled.div`
   background-image: url(${images.headerImg});
   height: ${layout.scale() * 300}px;

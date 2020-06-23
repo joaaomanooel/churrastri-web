@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { t } from '../../i18n';
 import { Button, Header, Input } from '../../components';
 import { Container, FormContainer } from './StyledComponent';
 
-export default ({ history, createUser, loading, user, error }) => {
+export default ({ createUser, loading, user, error }) => {
+  const history = useHistory();
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [username, setUsername] = useState('');
